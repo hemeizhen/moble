@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="moblesafe.ncs.yeyy.moblesafe.activity.HomeActivity">
+<TextView
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:textColor="@color/colorBlack"
+    android:textSize="22sp"
+    android:gravity="center"
+    android:background="#8866ff00"
+    android:text="功能列表"
+     />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:textColor="@color/colorBlack"
+        android:singleLine="true"
+        android:ellipsize="marquee"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:gravity="center_vertical"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:text="有了手机卫士什么都不用担心了哈哈哈哈哈哈哈……"/>
+    <GridView
+        android:id="@+id/gv_home"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:numColumns="3"
+        android:verticalSpacing="20dp"
+        >
+
+    </GridView>
+</LinearLayout>

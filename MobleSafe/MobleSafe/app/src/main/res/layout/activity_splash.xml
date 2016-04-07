@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/launcher_bg"
+    android:id="@+id/rl_root">
+<TextView
+    android:id="@+id/tv_version"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_centerInParent="true"
+    android:textSize="16sp"
+    android:textColor="@color/colorBlack"
+    android:text=""
+    android:shadowColor="@color/colorTypeface"
+    android:shadowDx="1"
+    android:shadowDy="1"
+    android:shadowRadius="1"
+    />
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_version"
+        android:layout_centerHorizontal="true"
+        />
+    <TextView
+        android:id="@+id/tv_progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:textColor="@color/colorRed"
+        android:text="下载进度"
+        android:textSize="16sp"
+        android:visibility="gone"
+        />
+</RelativeLayout>

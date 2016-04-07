@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="moblesafe.ncs.yeyy.moblesafe.activity.ContactActivity">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#8866ff00"
+        android:gravity="center"
+        android:text="选择联系人"
+        android:textColor="@color/colorBlack"
+        android:textSize="22sp" />
+    <ListView
+    android:id="@+id/lv_contact"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"/>
+</LinearLayout>

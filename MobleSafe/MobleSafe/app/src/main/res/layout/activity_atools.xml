@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="moblesafe.ncs.yeyy.moblesafe.activity.AToolsActivity">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:textColor="@color/colorBlack"
+        android:textSize="22sp"
+        android:gravity="center"
+        android:background="#8866ff00"
+        android:text="高级工具"
+        />
+    <TextView
+        android:id="@+id/tv_tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorBlack"
+        android:textSize="20sp"
+        android:gravity="center_vertical"
+        android:background="@drawable/button"
+        android:padding="10dp"
+        android:drawableLeft="@android:drawable/ic_menu_camera"
+        android:text="电话归属地查询"
+        />
+    <TextView
+        android:id="@+id/tv_back_upsms"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorBlack"
+        android:textSize="20sp"
+        android:gravity="center_vertical"
+        android:background="@drawable/button"
+        android:padding="10dp"
+        android:drawableLeft="@android:drawable/ic_menu_camera"
+        android:text="短信备份"
+        />
+    <ProgressBar
+        android:id="@+id/progressBar1"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+</LinearLayout>

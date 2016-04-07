@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="moblesafe.ncs.yeyy.moblesafe" >
+
+    <!-- 网络权限 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- 允许应用程序写入外部存储，如SD卡上写文件 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!-- 允许应用程序读取电话状态 -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <!-- 允许应用程序开机自动运行 -->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <!-- 读取联系人权限 -->
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <!-- 发送短信的权限 -->
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <!-- 拦截短信权限 -->
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <!-- 获取GPS的权限  精准 -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <!-- 获取GPS的权限  粗糙 -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <!-- 手机震动的权限 -->
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <!-- 监听去电的权限 -->
+    <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS" />
+    <!-- 改变WINDOW窗口权限 -->
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <!-- 卸载程序的权限 -->
+    <uses-permission android:name="android.permission.WIFI_STATE_WINDOW" />
+    <uses-permission android:name="android.permission.READ_SYNC_SETTINGS" />
+    <!-- 拨打电话的权限 -->
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <!-- 删除黑名单电话记录，需要读取电话号码 -->
+    <uses-permission android:name="android.permission.READ_CALL_LOG" />
+    <uses-permission android:name="android.permission.WRITE_CALL_LOG" />
+    <!-- 创建桌面快捷方式的权限 -->
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT" />
+    <!-- 短信备份的读写权限 -->
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.WRITE_SMS" />
+    <!-- 杀死进程的权限 -->
+    <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES" />
+
+    <android:uses-permission
+        android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="18" />
+
+    <!-- 模拟经纬度坐标 -->
+    <!-- <uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION"/> -->
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name=".activity.SplashActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.HomeActivity"
+            android:label="@string/title_activity_home" />
+
+        <intent-filter>
+
+            <!-- 这个名字可以随便取 -->
+            <action android:name="aaa.bbb.ccc" />
+
+            <category android:name="android.intent.category.DEFAULT" />
+        </intent-filter>
+
+        <activity
+            android:name=".activity.SettingActivity"
+            android:label="@string/title_activity_s" />
+        <activity
+            android:name=".activity.LostFindActivity"
+            android:label="@string/title_activity_lost_find" />
+        <activity
+            android:name=".activity.Setup1Activity"
+            android:label="@string/title_activity_setup1" />
+        <activity
+            android:name=".activity.Setup2Activity"
+            android:label="@string/title_activity_setup2" />
+        <activity
+            android:name=".activity.Setup3Activity"
+            android:label="@string/title_activity_setup3" />
+        <activity
+            android:name=".activity.Setup4Activity"
+            android:label="@string/title_activity_setup4" />
+        <!-- 监听手机开机启动的广播 -->
+        <receiver android:name=".receiver.BootCompleteReceiver" >
+            <intent-filter>
+                <action android:name="android.intent.action.boot_completed" />
+            </intent-filter>
+        </receiver>
+        <!-- 拦截短信的广播 2417483647 -->
+        <receiver android:name=".receiver.SmsReceiver" >
+            <intent-filter android:priority="1000" >
+                <action android:name="android.provider.Telephony.SMS_RECEIVED" />
+            </intent-filter>
+        </receiver>
+        <!-- 去电广播 -->
+        <!-- <receiver android:name=".receiver.OutCallReceiver"> -->
+        <!-- <intent-filter> -->
+        <!-- <action android:name="ANDROID.INTENT.ACTION.NEW_OUTGOING_CALL" /> -->
+        <!-- </intent-filter> -->
+        <!-- </receiver> -->
+        <!-- 获取GPS坐标的service -->
+        <service android:name=".service.LocationService" />
+        <service android:name=".service.AddressService" />
+
+        <activity
+            android:name=".activity.ContactActivity"
+            android:label="@string/title_activity_contact" />
+        <activity
+            android:name=".activity.LocationActivity"
+            android:label="@string/title_activity_location" />
+        <activity
+            android:name=".activity.AToolsActivity"
+            android:label="@string/title_activity_atools" />
+        <activity
+            android:name=".activity.AddressActivity"
+            android:label="@string/title_activity_address" />
+        <activity
+            android:name=".activity.DragViewActivity"
+            android:label="@string/title_activity_drag_view"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <activity
+            android:name=".activity.CallSafeActivity"
+            android:label="@string/title_activity_call_safe" />
+
+        <service
+            android:name=".service.CallSafeService"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity
+            android:name=".activity.AppManagerActivity"
+            android:label="@string/title_activity_app_manager" />
+        <activity
+            android:name=".activity.TaskManagerActivity"
+            android:label="@string/title_activity_task_manager" />
+        <activity android:name=".activity.TaskManagerSettingActivity"
+            android:label="@string/title_activity_task_setting_manager"/>
+    <!-- 自动清理进程-->
+    <service android:name=".service.KillProcessService"/>
+    </application>
+
+</manifest>
